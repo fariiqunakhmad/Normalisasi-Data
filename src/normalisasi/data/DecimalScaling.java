@@ -10,6 +10,7 @@ package normalisasi.data;
  * @author Afa
  */
 public class DecimalScaling {
+
     double[][] dataAsal;
     int i;
 
@@ -21,13 +22,20 @@ public class DecimalScaling {
         this.dataAsal = dataAsal;
         this.i = i;
     }
+
     public double[][] getDataHasil() {
         double[][] dataHasil = dataAsal;
         for (int i = 0; i < dataAsal.length; i++) {
             for (int j = 0; j < dataAsal[i].length; j++) {
-                //dataHasil[i][j] = (dataAsal[i][j] - 10^i) ; //data / 10^i
+                dataHasil[i][j] = (dataAsal[i][j] - Math.pow(10, this.i)); //data / 10^i
             }
         }
         return dataHasil;
     }
+
+    @Override
+    public String toString() {
+        return "DecimalScaling{" + "dataAsal=" + dataAsal + '}';
+    }
+
 }

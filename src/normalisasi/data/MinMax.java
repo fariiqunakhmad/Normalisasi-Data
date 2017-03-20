@@ -40,23 +40,23 @@ public class MinMax {
     }
 
     public double[] dataMin() {
-        Matrix matrix= new Matrix(dataAsal);
+        Matrix matrix = new Matrix(dataAsal);
         double[][] dataBaru = matrix.transpose();
         double[] dataMin = new double[dataBaru.length];
         for (int i = 0; i < dataBaru.length; i++) {
             Statistics s = new Statistics(dataBaru[i]);
-            dataMin[i]=s.getMin();
+            dataMin[i] = s.getMin();
         }
         return dataMin;
     }
 
     public double[] dataMax() {
-        Matrix matrix= new Matrix(dataAsal);
+        Matrix matrix = new Matrix(dataAsal);
         double[][] dataBaru = matrix.transpose();
         double[] dataMax = new double[dataBaru.length];
         for (int i = 0; i < dataBaru.length; i++) {
             Statistics s = new Statistics(dataBaru[i]);
-            dataMax[i]=s.getMax();
+            dataMax[i] = s.getMax();
         }
         return dataMax;
     }
